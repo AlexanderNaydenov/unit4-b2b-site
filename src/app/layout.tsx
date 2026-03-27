@@ -10,7 +10,8 @@ const inter = Inter({
   display: "swap",
 });
 
-export const revalidate = 120;
+/** Static until the next production build. Use Hygraph → Vercel Deploy Hook for instant updates after publish. */
+export const revalidate = false;
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
