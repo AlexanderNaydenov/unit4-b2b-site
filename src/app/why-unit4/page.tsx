@@ -5,16 +5,16 @@ import { SectionRenderer } from "@/components/sections/SectionRenderer";
 import { getLandingPage } from "@/lib/data";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await getLandingPage("home");
-  if (!page?.seo?.metaTitle) return {};
+  const page = await getLandingPage("why-unit4");
+  if (!page?.seo?.metaTitle) return { title: "Why Unit4" };
   return {
     title: page.seo.metaTitle,
     description: page.seo.metaDescription ?? undefined,
   };
 }
 
-export default async function HomePage() {
-  const page = await getLandingPage("home");
+export default async function WhyUnit4Page() {
+  const page = await getLandingPage("why-unit4");
   if (!page) notFound();
 
   return (
