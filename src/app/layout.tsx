@@ -10,7 +10,10 @@ const inter = Inter({
   display: "swap",
 });
 
-/** Static until the next production build. Use Hygraph → Vercel Deploy Hook for instant updates after publish. */
+/**
+ * Static until on-demand revalidation (`POST /api/revalidate`) or a new production deploy.
+ * Prefer webhooks → `/api/revalidate` so Hygraph publishes refresh without a full Vercel build.
+ */
 export const revalidate = false;
 
 export async function generateMetadata(): Promise<Metadata> {

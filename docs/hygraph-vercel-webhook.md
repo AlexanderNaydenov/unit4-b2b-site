@@ -1,6 +1,12 @@
-# Hygraph webhooks → Vercel deploy hooks
+# Hygraph webhooks → Vercel deploy hooks (full rebuild)
 
-This project is configured so **published Hygraph content is baked into static pages at build time**. To reflect CMS changes **without waiting for time-based revalidation**, use a **Vercel Deploy Hook** and call it from a **Hygraph webhook** (see [Hygraph: Trigger static build](https://hygraph.com/docs/developer-guides/webhooks/trigger-static-build)).
+**Recommended for day-to-day updates:** [on-demand revalidation](./on-demand-revalidation.md) (`/api/revalidate`) — **no full Vercel build**, usually seconds.
+
+Use **Deploy Hooks** only when you want a **complete `next build`** from git (e.g. dependency or config change), or as a backup.
+
+---
+
+This project bakes **published Hygraph content into static pages**. To reflect CMS changes **without time-based ISR**, you can trigger a **new Vercel deployment** with a **Deploy Hook** from a **Hygraph webhook** (see [Hygraph: Trigger static build](https://hygraph.com/docs/developer-guides/webhooks/trigger-static-build)).
 
 ## 1. Create a Deploy Hook (Vercel)
 
@@ -33,8 +39,10 @@ Webhooks are **per environment** in Hygraph — configure staging vs production 
 
 ## How this fits the Next.js app
 
-- The root layout sets **`revalidate = false`**, so pages do not rely on periodic ISR; **fresh content comes from new builds** triggered by the deploy hook (plus any normal Git push deployments).
-- Local **`next dev`** still loads data on each request, so editors can preview without waiting for Vercel.
+- The root layout sets **`revalidate = false`**, so there is no periodic ISR.
+- **Primary refresh path:** Hygraph webhook → **`POST /api/revalidate`** (see [on-demand revalidation](./on-demand-revalidation.md)).
+- **Full rebuild path:** this Deploy Hook (or any git push to the connected branch).
+- Local **`next dev`** still loads data on each request.
 
 ## Manual trigger (debugging)
 
