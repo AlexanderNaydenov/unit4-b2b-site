@@ -33,6 +33,11 @@ export default async function PersonaPage({ params }: Props) {
         title={persona.title}
         summary={persona.summary}
         image={persona.heroImage}
+        preview={{
+          entryId: persona.id,
+          titleFieldApiId: "title",
+          summaryFieldApiId: "summary",
+        }}
       />
       {persona.recommendedProducts.length > 0 ? (
         <section className="border-b border-[var(--brand-slate)]/10 bg-white px-6 py-12">
@@ -55,7 +60,7 @@ export default async function PersonaPage({ params }: Props) {
           </div>
         </section>
       ) : null}
-      <SectionRenderer sections={persona.sections} />
+      <SectionRenderer sections={persona.sections} previewEntryId={persona.id} />
     </>
   );
 }

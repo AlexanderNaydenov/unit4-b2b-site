@@ -10,6 +10,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value:
+              "frame-ancestors 'self' https://*.hygraph.com https://app.hygraph.com https://*.graphcms.com",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

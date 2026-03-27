@@ -32,8 +32,13 @@ export default async function IndustryPage({ params }: Props) {
         title={industry.name}
         summary={industry.summary}
         image={industry.heroImage}
+        preview={{
+          entryId: industry.id,
+          titleFieldApiId: "name",
+          summaryFieldApiId: "summary",
+        }}
       />
-      <SectionRenderer sections={industry.sections} />
+      <SectionRenderer sections={industry.sections} previewEntryId={industry.id} />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import type { RichTextContent } from "@graphcms/rich-text-types";
+import type { RichTextPreviewAttrs } from "@/lib/preview-attrs";
 
 const renderers = {
   p: ({ children }: { children?: React.ReactNode }) => (
@@ -52,14 +53,17 @@ function isRichTextEmpty(raw: RichTextContent | undefined | null) {
 export function RichBody({
   raw,
   className = "",
+  preview,
 }: {
   raw: RichTextContent | undefined | null;
   className?: string;
+  /** Hygraph click-to-edit attributes for rich text `body` fields */
+  preview?: RichTextPreviewAttrs;
 }) {
   if (isRichTextEmpty(raw)) return null;
   const content = raw as RichTextContent;
   return (
-    <div className={`prose-brand max-w-none ${className}`}>
+    <div className={`prose-brand max-w-none ${className}`} {...(preview ?? {})}>
       <RichText content={content} renderers={renderers} />
     </div>
   );

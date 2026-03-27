@@ -19,7 +19,7 @@ export default async function SolutionsPage() {
 
   return (
     <>
-      <SectionRenderer sections={page.sections} />
+      <SectionRenderer sections={page.sections} previewEntryId={page.id} />
       <FeaturedProducts products={page.featuredProducts} />
       <FeaturedCustomers stories={page.featuredCustomerStories} />
     </>

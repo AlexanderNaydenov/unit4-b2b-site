@@ -1,9 +1,15 @@
 import Link from "next/link";
+import { previewField } from "@/lib/preview-attrs";
 
 export function FeaturedProducts({
   products,
 }: {
-  products: Array<{ name: string; slug: string; summary?: string | null }>;
+  products: Array<{
+    id: string;
+    name: string;
+    slug: string;
+    summary?: string | null;
+  }>;
 }) {
   if (!products.length) return null;
   return (
@@ -27,11 +33,17 @@ export function FeaturedProducts({
               href={`/products/${p.slug}`}
               className="group rounded-xl border border-[var(--brand-slate)]/15 bg-[var(--brand-surface)] p-6 transition hover:border-[var(--brand-lime)]/50 hover:shadow-lg"
             >
-              <h3 className="text-lg font-semibold text-[var(--brand-ink)] group-hover:text-[var(--brand-slate)]">
+              <h3
+                className="text-lg font-semibold text-[var(--brand-ink)] group-hover:text-[var(--brand-slate)]"
+                {...previewField(p.id, "name")}
+              >
                 {p.name}
               </h3>
               {p.summary ? (
-                <p className="mt-2 text-sm leading-relaxed text-[var(--brand-muted)]">
+                <p
+                  className="mt-2 text-sm leading-relaxed text-[var(--brand-muted)]"
+                  {...previewField(p.id, "summary")}
+                >
                   {p.summary}
                 </p>
               ) : null}
@@ -50,6 +62,7 @@ export function FeaturedCustomers({
   stories,
 }: {
   stories: Array<{
+    id: string;
     title: string;
     slug: string;
     clientName?: string | null;
@@ -76,15 +89,26 @@ export function FeaturedCustomers({
               className="group flex flex-col rounded-xl border border-[var(--brand-slate)]/10 bg-white p-8 shadow-sm transition hover:border-[var(--brand-lime)]/40"
             >
               {s.clientName ? (
-                <p className="text-xs font-semibold uppercase tracking-wider text-[var(--brand-slate)]">
+                <p
+                  className="text-xs font-semibold uppercase tracking-wider text-[var(--brand-slate)]"
+                  {...previewField(s.id, "clientName")}
+                >
                   {s.clientName}
                 </p>
               ) : null}
-              <h3 className="mt-2 text-xl font-semibold text-[var(--brand-ink)]">
+              <h3
+                className="mt-2 text-xl font-semibold text-[var(--brand-ink)]"
+                {...previewField(s.id, "title")}
+              >
                 {s.title}
               </h3>
               {s.excerpt ? (
-                <p className="mt-3 flex-1 text-[var(--brand-muted)]">{s.excerpt}</p>
+                <p
+                  className="mt-3 flex-1 text-[var(--brand-muted)]"
+                  {...previewField(s.id, "excerpt")}
+                >
+                  {s.excerpt}
+                </p>
               ) : null}
               <span className="mt-6 text-sm font-semibold text-[var(--brand-lime)]">
                 Read story →

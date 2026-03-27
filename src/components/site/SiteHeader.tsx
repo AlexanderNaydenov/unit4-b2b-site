@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { previewField } from "@/lib/preview-attrs";
 
 const nav = [
   { href: "/solutions", label: "Solutions" },
@@ -15,27 +16,43 @@ export function SiteHeader({
   logoUrl,
   headerCtaLabel,
   headerCtaUrl,
+  settingsEntryId,
 }: {
   siteName: string;
   logoUrl?: string | null;
   headerCtaLabel?: string | null;
   headerCtaUrl?: string | null;
+  /** SiteSettings entry id for Hygraph click-to-edit */
+  settingsEntryId?: string;
 }) {
+  const nameAttrs = settingsEntryId
+    ? previewField(settingsEntryId, "siteName")
+    : {};
+  const logoAttrs = settingsEntryId ? previewField(settingsEntryId, "logo") : {};
+  const ctaLabelAttrs = settingsEntryId
+    ? previewField(settingsEntryId, "headerCtaLabel")
+    : {};
+
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--brand-slate)]/15 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
         <Link href="/" className="flex shrink-0 items-center gap-2">
           {logoUrl ? (
-            <Image
-              src={logoUrl}
-              alt={siteName}
-              width={140}
-              height={32}
-              className="h-8 w-auto object-contain object-left"
-              priority
-            />
+            <span className="relative block h-8 w-[140px]" {...logoAttrs}>
+              <Image
+                src={logoUrl}
+                alt={siteName}
+                width={140}
+                height={32}
+                className="h-8 w-auto object-contain object-left"
+                priority
+              />
+            </span>
           ) : (
-            <span className="text-xl font-semibold tracking-tight text-[var(--brand-ink)]">
+            <span
+              className="text-xl font-semibold tracking-tight text-[var(--brand-ink)]"
+              {...nameAttrs}
+            >
               {siteName}
             </span>
           )}
@@ -61,6 +78,7 @@ export function SiteHeader({
               className="hidden rounded-md bg-[var(--brand-lime)] px-4 py-2 text-sm font-semibold text-[var(--brand-ink)] transition hover:brightness-95 sm:inline-flex"
               target="_blank"
               rel="noopener noreferrer"
+              {...ctaLabelAttrs}
             >
               {headerCtaLabel}
             </a>

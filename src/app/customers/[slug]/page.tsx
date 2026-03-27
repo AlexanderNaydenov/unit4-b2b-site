@@ -34,6 +34,11 @@ export default async function CustomerStoryPage({ params }: Props) {
         title={story.title}
         summary={story.excerpt}
         image={story.heroImage}
+        preview={{
+          entryId: story.id,
+          titleFieldApiId: "title",
+          summaryFieldApiId: "excerpt",
+        }}
       />
       <div className="border-b border-[var(--brand-slate)]/10 bg-white px-6 py-8">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-6">
@@ -60,7 +65,7 @@ export default async function CustomerStoryPage({ params }: Props) {
           ) : null}
         </div>
       </div>
-      <SectionRenderer sections={story.sections} />
+      <SectionRenderer sections={story.sections} previewEntryId={story.id} />
     </>
   );
 }

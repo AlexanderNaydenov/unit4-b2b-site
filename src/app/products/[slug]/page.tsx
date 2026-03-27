@@ -32,8 +32,13 @@ export default async function ProductPage({ params }: Props) {
         title={product.name}
         summary={product.summary}
         image={product.heroImage}
+        preview={{
+          entryId: product.id,
+          titleFieldApiId: "name",
+          summaryFieldApiId: "summary",
+        }}
       />
-      <SectionRenderer sections={product.sections} />
+      <SectionRenderer sections={product.sections} previewEntryId={product.id} />
     </>
   );
 }

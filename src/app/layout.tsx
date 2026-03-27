@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import { draftMode } from "next/headers";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import { PreviewWrapper } from "@/components/preview/PreviewWrapper";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { getSiteSettings } from "@/lib/data";
+import "./globals.css";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -12,15 +15,16 @@ const inter = Inter({
 
 /**
  * Static until on-demand revalidation (`POST /api/revalidate`) or a new production deploy.
- * Prefer webhooks → `/api/revalidate` so Hygraph publishes refresh without a full Vercel build.
+ * Draft Mode (`/api/draft`) uses DRAFT stage for Hygraph Live Preview.
  */
 export const revalidate = false;
 
 export async function generateMetadata(): Promise<Metadata> {
+  const { isEnabled } = await draftMode();
   const settings = await getSiteSettings();
   const title = settings?.siteName ?? "Unit4";
   const og = settings?.defaultOgImage?.url;
-  return {
+  const base: Metadata = {
     title: {
       default: title,
       template: `%s | ${title}`,
@@ -32,6 +36,10 @@ export async function generateMetadata(): Promise<Metadata> {
     ),
     openGraph: og ? { images: [og] } : undefined,
   };
+  if (isEnabled) {
+    return { ...base, robots: { index: false, follow: false } };
+  }
+  return base;
 }
 
 export default async function RootLayout({
@@ -42,18 +50,26 @@ export default async function RootLayout({
   const settings = await getSiteSettings();
   const siteName = settings?.siteName ?? "Unit4";
   const logoUrl = settings?.logo?.url ?? "/unit4-logo.png";
+  const settingsId = settings?.id;
 
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-[var(--foreground)]">
-        <SiteHeader
-          siteName={siteName}
-          logoUrl={logoUrl}
-          headerCtaLabel={settings?.headerCtaLabel ?? undefined}
-          headerCtaUrl={settings?.headerCtaUrl ?? undefined}
-        />
-        <main className="flex-1">{children}</main>
-        <SiteFooter siteName={siteName} footerTagline={settings?.footerTagline} />
+        <PreviewWrapper>
+          <SiteHeader
+            siteName={siteName}
+            logoUrl={logoUrl}
+            headerCtaLabel={settings?.headerCtaLabel ?? undefined}
+            headerCtaUrl={settings?.headerCtaUrl ?? undefined}
+            settingsEntryId={settingsId}
+          />
+          <main className="flex-1">{children}</main>
+          <SiteFooter
+            siteName={siteName}
+            footerTagline={settings?.footerTagline}
+            settingsEntryId={settingsId}
+          />
+        </PreviewWrapper>
       </body>
     </html>
   );

@@ -1,57 +1,90 @@
-/** Shared section union selection — aliases avoid GraphQL field conflicts across inline fragments */
+/** Shared section union — aliases avoid GraphQL field conflicts across inline fragments */
 export const SECTIONS_GQL = `
   sections {
     __typename
     ... on HeroBlock {
+      id
       eyebrow headline subheadline
-      primaryCta { label url variant }
-      secondaryCta { label url variant }
+      primaryCta { id label url variant }
+      secondaryCta { id label url variant }
     }
     ... on RichTextBlock {
+      id
       richBody: body { raw }
     }
     ... on CallToActionBanner {
+      id
       layout
       ctaBannerTitle: title
       ctaBannerBody: body { raw }
-      cta { label url variant }
+      cta { id label url variant }
       image { url width height }
     }
     ... on CardGridBlock {
-      intro { eyebrow title subtitle }
-      cards { title excerpt href }
+      id
+      intro { id eyebrow title subtitle }
+      cards { id title excerpt href }
     }
     ... on FeatureGridBlock {
-      intro { eyebrow title subtitle }
-      features { title description { raw } }
+      id
+      intro { id eyebrow title subtitle }
+      features { id title description { raw } }
     }
     ... on StatsBlock {
-      intro { eyebrow title subtitle }
-      stats { value label }
+      id
+      intro { id eyebrow title subtitle }
+      stats { id value label }
     }
     ... on LogoStripBlock {
+      id
       logoStripTitle: title
     }
     ... on QuoteBlock {
+      id
       quote authorName authorTitle
     }
     ... on MediaWithTextBlock {
+      id
       mediaPosition
       mwtTitle: title
       mwtBody: body { raw }
       image { url width height }
-      mwtCta: cta { label url variant }
+      mwtCta: cta { id label url variant }
     }
     ... on FaqBlock {
-      intro { eyebrow title subtitle }
-      items { question answer { raw } }
+      id
+      intro { id eyebrow title subtitle }
+      items { id question answer { raw } }
+    }
+  }
+`;
+
+export const RESOLVE_PREVIEW_SLUG = `
+  query ResolvePreviewSlug($slug: String!) {
+    lp: landingPages(where: { slug: $slug }, stage: DRAFT, locales: [en], first: 1) {
+      slug
+    }
+    pr: products(where: { slug: $slug }, stage: DRAFT, locales: [en], first: 1) {
+      slug
+    }
+    ind: industries(where: { slug: $slug }, stage: DRAFT, locales: [en], first: 1) {
+      slug
+    }
+    per: personaRoles(where: { slug: $slug }, stage: DRAFT, locales: [en], first: 1) {
+      slug
+    }
+    res: resources(where: { slug: $slug }, stage: DRAFT, locales: [en], first: 1) {
+      slug
+    }
+    cus: customerStories(where: { slug: $slug }, stage: DRAFT, locales: [en], first: 1) {
+      slug
     }
   }
 `;
 
 export const SITE_SETTINGS_QUERY = `
-  query SiteSettings {
-    siteSettingsCollection(first: 1) {
+  query SiteSettings($stage: Stage!) {
+    siteSettingsCollection(first: 1, stage: $stage) {
       id
       siteName
       headerCtaLabel
@@ -64,30 +97,30 @@ export const SITE_SETTINGS_QUERY = `
 `;
 
 export const LANDING_BY_SLUG = `
-  query LandingBySlug($slug: String!) {
-    landingPages(where: { slug: $slug }, stage: PUBLISHED, locales: [en], first: 1) {
+  query LandingBySlug($slug: String!, $stage: Stage!) {
+    landingPages(where: { slug: $slug }, stage: $stage, locales: [en], first: 1) {
       id
       title
       slug
       seo { metaTitle metaDescription }
-      featuredProducts { name slug summary }
-      featuredCustomerStories { title slug clientName excerpt }
+      featuredProducts { id name slug summary }
+      featuredCustomerStories { id title slug clientName excerpt }
       ${SECTIONS_GQL}
     }
   }
 `;
 
 export const LANDING_SLUGS = `
-  query LandingSlugs {
-    landingPages(stage: PUBLISHED, locales: [en], first: 100) {
+  query LandingSlugs($stage: Stage!) {
+    landingPages(stage: $stage, locales: [en], first: 100) {
       slug
     }
   }
 `;
 
 export const PRODUCT_BY_SLUG = `
-  query ProductBySlug($slug: String!) {
-    products(where: { slug: $slug }, stage: PUBLISHED, locales: [en], first: 1) {
+  query ProductBySlug($slug: String!, $stage: Stage!) {
+    products(where: { slug: $slug }, stage: $stage, locales: [en], first: 1) {
       id
       name
       slug
@@ -100,16 +133,16 @@ export const PRODUCT_BY_SLUG = `
 `;
 
 export const PRODUCT_SLUGS = `
-  query ProductSlugs {
-    products(stage: PUBLISHED, locales: [en], first: 100) {
+  query ProductSlugs($stage: Stage!) {
+    products(stage: $stage, locales: [en], first: 100) {
       slug
     }
   }
 `;
 
 export const INDUSTRY_BY_SLUG = `
-  query IndustryBySlug($slug: String!) {
-    industries(where: { slug: $slug }, stage: PUBLISHED, locales: [en], first: 1) {
+  query IndustryBySlug($slug: String!, $stage: Stage!) {
+    industries(where: { slug: $slug }, stage: $stage, locales: [en], first: 1) {
       id
       name
       slug
@@ -122,39 +155,39 @@ export const INDUSTRY_BY_SLUG = `
 `;
 
 export const INDUSTRY_SLUGS = `
-  query IndustrySlugs {
-    industries(stage: PUBLISHED, locales: [en], first: 100) {
+  query IndustrySlugs($stage: Stage!) {
+    industries(stage: $stage, locales: [en], first: 100) {
       slug
     }
   }
 `;
 
 export const PERSONA_BY_SLUG = `
-  query PersonaBySlug($slug: String!) {
-    personaRoles(where: { slug: $slug }, stage: PUBLISHED, locales: [en], first: 1) {
+  query PersonaBySlug($slug: String!, $stage: Stage!) {
+    personaRoles(where: { slug: $slug }, stage: $stage, locales: [en], first: 1) {
       id
       title
       slug
       summary
       heroImage { url width height }
       seo { metaTitle metaDescription }
-      recommendedProducts { name slug summary }
+      recommendedProducts { id name slug summary }
       ${SECTIONS_GQL}
     }
   }
 `;
 
 export const PERSONA_SLUGS = `
-  query PersonaSlugs {
-    personaRoles(stage: PUBLISHED, locales: [en], first: 100) {
+  query PersonaSlugs($stage: Stage!) {
+    personaRoles(stage: $stage, locales: [en], first: 100) {
       slug
     }
   }
 `;
 
 export const RESOURCE_BY_SLUG = `
-  query ResourceBySlug($slug: String!) {
-    resources(where: { slug: $slug }, stage: PUBLISHED, locales: [en], first: 1) {
+  query ResourceBySlug($slug: String!, $stage: Stage!) {
+    resources(where: { slug: $slug }, stage: $stage, locales: [en], first: 1) {
       id
       title
       slug
@@ -170,16 +203,16 @@ export const RESOURCE_BY_SLUG = `
 `;
 
 export const RESOURCE_SLUGS = `
-  query ResourceSlugs {
-    resources(stage: PUBLISHED, locales: [en], first: 100) {
+  query ResourceSlugs($stage: Stage!) {
+    resources(stage: $stage, locales: [en], first: 100) {
       slug
     }
   }
 `;
 
 export const CUSTOMER_BY_SLUG = `
-  query CustomerBySlug($slug: String!) {
-    customerStories(where: { slug: $slug }, stage: PUBLISHED, locales: [en], first: 1) {
+  query CustomerBySlug($slug: String!, $stage: Stage!) {
+    customerStories(where: { slug: $slug }, stage: $stage, locales: [en], first: 1) {
       id
       title
       slug
@@ -195,8 +228,8 @@ export const CUSTOMER_BY_SLUG = `
 `;
 
 export const CUSTOMER_SLUGS = `
-  query CustomerSlugs {
-    customerStories(stage: PUBLISHED, locales: [en], first: 100) {
+  query CustomerSlugs($stage: Stage!) {
+    customerStories(stage: $stage, locales: [en], first: 100) {
       slug
     }
   }
@@ -204,36 +237,36 @@ export const CUSTOMER_SLUGS = `
 
 export const LIST_QUERIES = {
   products: `
-    query ProductList {
-      products(stage: PUBLISHED, locales: [en], first: 100, orderBy: name_ASC) {
+    query ProductList($stage: Stage!) {
+      products(stage: $stage, locales: [en], first: 100, orderBy: name_ASC) {
         name slug summary
       }
     }
   `,
   industries: `
-    query IndustryList {
-      industries(stage: PUBLISHED, locales: [en], first: 100, orderBy: name_ASC) {
+    query IndustryList($stage: Stage!) {
+      industries(stage: $stage, locales: [en], first: 100, orderBy: name_ASC) {
         name slug summary
       }
     }
   `,
   personas: `
-    query PersonaList {
-      personaRoles(stage: PUBLISHED, locales: [en], first: 100, orderBy: title_ASC) {
+    query PersonaList($stage: Stage!) {
+      personaRoles(stage: $stage, locales: [en], first: 100, orderBy: title_ASC) {
         title slug summary
       }
     }
   `,
   resources: `
-    query ResourceList {
-      resources(stage: PUBLISHED, locales: [en], first: 100, orderBy: title_ASC) {
+    query ResourceList($stage: Stage!) {
+      resources(stage: $stage, locales: [en], first: 100, orderBy: title_ASC) {
         title slug summary resourceType releaseDate
       }
     }
   `,
   customers: `
-    query CustomerList {
-      customerStories(stage: PUBLISHED, locales: [en], first: 100, orderBy: title_ASC) {
+    query CustomerList($stage: Stage!) {
+      customerStories(stage: $stage, locales: [en], first: 100, orderBy: title_ASC) {
         title slug excerpt clientName
       }
     }

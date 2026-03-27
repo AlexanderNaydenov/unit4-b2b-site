@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { getResource, getResourceSlugs } from "@/lib/data";
+import { previewField } from "@/lib/preview-attrs";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -28,21 +29,32 @@ export default async function ResourceDetailPage({ params }: Props) {
   if (!resource) notFound();
 
   const primaryHref = resource.externalUrl ?? resource.file?.url ?? null;
+  const tAttrs = previewField(resource.id, "title");
+  const sumAttrs = previewField(resource.id, "summary");
+  const thumbAttrs = previewField(resource.id, "thumbnail");
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
       <p className="text-xs font-semibold uppercase tracking-wider text-[var(--brand-lime)]">
         {resource.resourceType.replace("_", " ")}
       </p>
-      <h1 className="mt-2 text-4xl font-semibold tracking-tight text-[var(--brand-ink)]">
+      <h1
+        className="mt-2 text-4xl font-semibold tracking-tight text-[var(--brand-ink)]"
+        {...tAttrs}
+      >
         {resource.title}
       </h1>
       {resource.summary ? (
-        <p className="mt-4 text-lg text-[var(--brand-muted)]">{resource.summary}</p>
+        <p className="mt-4 text-lg text-[var(--brand-muted)]" {...sumAttrs}>
+          {resource.summary}
+        </p>
       ) : null}
 
       {resource.thumbnail?.url ? (
-        <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-xl">
+        <div
+          className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-xl"
+          {...thumbAttrs}
+        >
           <Image
             src={resource.thumbnail.url}
             alt=""
