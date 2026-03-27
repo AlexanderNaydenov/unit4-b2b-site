@@ -1,0 +1,54 @@
+{
+  "summary": "Regional HRMS for Asia Pacific—track, manage, and analyze talent across the full HR lifecycle, positioned alongside Unit4's global HCM and ERP portfolio.",
+  "industries": {
+    "set": [
+      { "id": "cmn7ey0bpy9an07w3w37piq4u" },
+      { "id": "cmn7ey2ojy9gg07w3i87xcvlo" }
+    ]
+  },
+  "relatedProducts": {
+    "set": [
+      { "id": "cmn7exnx6y08a06wanzh39nbl" },
+      { "id": "cmn7ewh2vy3ih07w36gp2fy54" },
+      { "id": "cmn7exqlqy0oz06wac33j3hp6" }
+    ]
+  },
+  "sections": {
+    "create": [
+      {
+        "HeroBlock": {
+          "data": {
+            "eyebrow": "Asia Pacific",
+            "headline": "Prosoft HRMS",
+            "subheadline": "HR and payroll capabilities tailored for organizations across APAC.",
+            "primaryCta": {
+              "create": {
+                "label": "Contact Unit4",
+                "url": "https://www.unit4.com/contact-us",
+                "variant": "PRIMARY"
+              }
+            }
+          }
+        }
+      },
+      {
+        "RichTextBlock": {
+          "data": {
+            "body": {
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Prosoft HRMS supports organizations in Asia Pacific with localized payroll and HR processes, employee records, and analytics—while staying connected to Unit4's broader cloud platform story for enterprises that operate regionally and globally."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

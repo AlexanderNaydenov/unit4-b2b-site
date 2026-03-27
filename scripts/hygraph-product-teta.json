@@ -1,0 +1,50 @@
+{
+  "summary": "Comprehensive ERP for Poland—finance, logistics, production, and HR for growing businesses, reflecting Unit4's regional portfolio for Central Europe.",
+  "industries": {
+    "set": [{ "id": "cmn7ey0bpy9an07w3w37piq4u" }]
+  },
+  "relatedProducts": {
+    "set": [
+      { "id": "cmn7ewh2vy3ih07w36gp2fy54" },
+      { "id": "cmn7exqlqy0oz06wac33j3hp6" }
+    ]
+  },
+  "sections": {
+    "create": [
+      {
+        "HeroBlock": {
+          "data": {
+            "eyebrow": "Poland",
+            "headline": "Teta ERP",
+            "subheadline": "End-to-end ERP for Polish organizations scaling operations.",
+            "primaryCta": {
+              "create": {
+                "label": "Contact us",
+                "url": "https://www.unit4.com/contact-us",
+                "variant": "PRIMARY"
+              }
+            }
+          }
+        }
+      },
+      {
+        "RichTextBlock": {
+          "data": {
+            "body": {
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Teta ERP helps Polish companies unify finance, supply chain, manufacturing, and people processes on a single modern platform—so leaders can see performance clearly and respond to market and regulatory change with confidence."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

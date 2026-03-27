@@ -1,0 +1,53 @@
+{
+  "summary": "Plan, record, and process time and expenses on projects—integrated for Nordic organizations, consistent with Unit4's project and professional services positioning.",
+  "industries": {
+    "set": [
+      { "id": "cmn7ey0bpy9an07w3w37piq4u" },
+      { "id": "cmn7ey0bry9ax07w311r0rhwn" }
+    ]
+  },
+  "relatedProducts": {
+    "set": [
+      { "id": "cmn7ewh2vy3ih07w36gp2fy54" },
+      { "id": "cmn7exqlqy0oz06wac33j3hp6" }
+    ]
+  },
+  "sections": {
+    "create": [
+      {
+        "HeroBlock": {
+          "data": {
+            "eyebrow": "Nordics",
+            "headline": "Unit4 Time & Expense",
+            "subheadline": "Accurate time and expense capture for project-driven organizations.",
+            "primaryCta": {
+              "create": {
+                "label": "Learn more",
+                "url": "https://www.unit4.com/contact-us",
+                "variant": "PRIMARY"
+              }
+            }
+          }
+        }
+      },
+      {
+        "RichTextBlock": {
+          "data": {
+            "body": {
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Time and expense data underpins project profitability and compliance. This offering helps Nordic teams capture hours and costs with less friction, feed ERP and billing processes reliably, and give project managers the visibility they need to deliver on client commitments."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

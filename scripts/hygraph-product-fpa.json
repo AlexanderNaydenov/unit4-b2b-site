@@ -1,0 +1,164 @@
+{
+  "summary": "Unit4 FP&A is a cloud-native FP&A platform for services-led, people-centric organizations—integrated financial planning with a single source of truth for confident decision-making (unit4.com/products/budget-and-forecasting-software).",
+  "industries": {
+    "set": [
+      { "id": "cmn7ey0bpy9an07w3w37piq4u" },
+      { "id": "cmn7ey0bry9ax07w311r0rhwn" },
+      { "id": "cmn7ey2ogy9g607w31mvqeimf" },
+      { "id": "cmn7ey2ojy9gg07w3i87xcvlo" }
+    ]
+  },
+  "relatedProducts": {
+    "set": [
+      { "id": "cmn7ewh2vy3ih07w36gp2fy54" },
+      { "id": "cmn7exnx4y08306wa8m7xgs4h" },
+      { "id": "cmn7exnx6y08a06wanzh39nbl" },
+      { "id": "cmn7exqlqy0oz06wac33j3hp6" }
+    ]
+  },
+  "sections": {
+    "create": [
+      {
+        "HeroBlock": {
+          "data": {
+            "eyebrow": "Cloud FP&A",
+            "headline": "Cloud FP&A platform for Financial Planning & Analysis",
+            "subheadline": "Plan smarter. Forecast reliably. Report accurately.",
+            "primaryCta": {
+              "create": {
+                "label": "See a demo",
+                "url": "https://www.unit4.com/contact-us",
+                "variant": "PRIMARY"
+              }
+            },
+            "secondaryCta": {
+              "create": {
+                "label": "Explore resources",
+                "url": "https://www.unit4.com/library",
+                "variant": "SECONDARY"
+              }
+            }
+          }
+        }
+      },
+      {
+        "RichTextBlock": {
+          "data": {
+            "body": {
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Unit4 FP&A is a cloud-native FP&A platform designed for services-led, people-centric organizations. It consolidates data, automates analysis, and delivers a single source of truth so finance teams can move beyond spreadsheet dependency—with AI-driven insights, streamlined workflows, and industry-ready models for budgeting, forecasting, consolidation, and reporting."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "FeatureGridBlock": {
+          "data": {
+            "intro": {
+              "create": {
+                "eyebrow": "Trusted data",
+                "title": "Trusted data and a single source of truth",
+                "subtitle": "Highlights from unit4.com FP&A product pages."
+              }
+            },
+            "features": {
+              "create": [
+                {
+                  "title": "Flexible cloud FP&A",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Smarter planning, budgeting, forecasting, reporting and financial analysis—with efficiency and flexibility for teams to collaborate and make better decisions faster."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "ERP + FP&A together",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Align operational, strategic and financial planning with a single source of truth. Improve visibility, raise productivity through automation, and lower operating costs by unifying processes."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Reporting, analysis and dashboards",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Integrate data from different sources, view actuals, plans and forecasts, drill down to root causes, and track performance across strategic drivers—with automated analysis to save time."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "QuoteBlock": {
+          "data": {
+            "quote": "Unit4 FP&A is a quantum step forward for the Trust. We now benefit from consistent, collaborative, and accurate planning. The automation saves about three weeks during the budget setting process. And it saves us at least one week in terms of pulling all the forecasts together.",
+            "authorName": "Alison Upton",
+            "authorTitle": "Finance Manager, NHS Bedfordshire Hospitals Foundation Trust"
+          }
+        }
+      },
+      {
+        "StatsBlock": {
+          "data": {
+            "intro": {
+              "create": {
+                "eyebrow": "Analyst recognition",
+                "title": "Highly rated FP&A software",
+                "subtitle": "Recognition from BARC, Dresner, BPM Partners and more on unit4.com."
+              }
+            },
+            "stats": {
+              "create": [
+                {
+                  "value": "9",
+                  "label": "Leading positions in The Planning Survey 2025 (BARC)"
+                },
+                {
+                  "value": "Leader",
+                  "label": "Overall Leader for Customer Experience — Dresner EPM 2025"
+                },
+                {
+                  "value": "Top tier",
+                  "label": "2025 Vendor Landscape Matrix — BPM Partners"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

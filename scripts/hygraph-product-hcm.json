@@ -1,0 +1,172 @@
+{
+  "summary": "Cloud-based HCM that optimizes people processes, aligns workforce capabilities with business goals, and simplifies payroll—Core HR, Payroll, Talent, and analytics in one integrated suite (unit4.com/products/talent-and-hr-management-software).",
+  "industries": {
+    "set": [
+      { "id": "cmn7ey0bpy9an07w3w37piq4u" },
+      { "id": "cmn7ey0bry9ax07w311r0rhwn" },
+      { "id": "cmn7ey2ogy9g607w31mvqeimf" },
+      { "id": "cmn7ey2ojy9gg07w3i87xcvlo" }
+    ]
+  },
+  "relatedProducts": {
+    "set": [
+      { "id": "cmn7ewh2vy3ih07w36gp2fy54" },
+      { "id": "cmn7exnx1y07w06wai1bej5by" },
+      { "id": "cmn7exqlqy0oz06wac33j3hp6" }
+    ]
+  },
+  "sections": {
+    "create": [
+      {
+        "HeroBlock": {
+          "data": {
+            "eyebrow": "Human Capital Management",
+            "headline": "Cloud-based human capital management (HCM) software",
+            "subheadline": "Engage your people. Develop and retain talent. Drive change through insights.",
+            "primaryCta": {
+              "create": {
+                "label": "Talk to Unit4",
+                "url": "https://www.unit4.com/contact-us",
+                "variant": "PRIMARY"
+              }
+            },
+            "secondaryCta": {
+              "create": {
+                "label": "Why Unit4 HCM",
+                "url": "https://www.unit4.com/products/talent-and-hr-management-software",
+                "variant": "GHOST"
+              }
+            }
+          }
+        }
+      },
+      {
+        "RichTextBlock": {
+          "data": {
+            "body": {
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Choosing the right human capital management software is critical for organizations that put people first. Unit4's cloud-based HCM delivers an integrated solution that optimizes people processes, aligns workforce capabilities with business goals, simplifies payroll accuracy, and enhances talent engagement, development, and retention—so HR teams become strategic partners in organizational success."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "FeatureGridBlock": {
+          "data": {
+            "intro": {
+              "create": {
+                "eyebrow": "Capabilities",
+                "title": "Empower, support and inspire your people",
+                "subtitle": "Based on Unit4 HCM messaging on unit4.com."
+              }
+            },
+            "features": {
+              "create": [
+                {
+                  "title": "Core HR",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Manage and analyze your workforce, track absences, and streamline expense management with automated processes and self-service—from hire to retire in a central database."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Payroll",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Sync HR and payroll data for complex calculations in one system. Improve accuracy, reduce duplication, automate routines, and visualize insights for better decisions."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Talent and people analytics",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Boost productivity and engagement with tools for managers and teams—skills, performance, learning, and workforce planning aligned with finance when you integrate with Unit4 FP&A."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "FaqBlock": {
+          "data": {
+            "intro": {
+              "create": {
+                "eyebrow": "FAQ",
+                "title": "Frequently asked questions about Unit4 HCM",
+                "subtitle": "Summarized from unit4.com."
+              }
+            },
+            "items": {
+              "create": [
+                {
+                  "question": "What is included in Unit4 HCM?",
+                  "answer": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Core HR, Payroll Management, Talent Management, People Planning & Analytics, and Employee Self-Service—integrated so HR and finance can share a unified view of people data."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "question": "Who is Unit4 HCM designed for?",
+                  "answer": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "People-centric organizations including professional services, public sector, nonprofit, and higher education—supporting CHROs, talent leaders, and HR teams driving strategic value."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

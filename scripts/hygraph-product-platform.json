@@ -1,0 +1,153 @@
+{
+  "summary": "The AI-powered Unit4 Platform connects your applications with extensibility, automation, integrations, and continuous innovation—described on unit4.com as the foundation for ERP, FP&A, HCM, and more.",
+  "industries": {
+    "set": [
+      { "id": "cmn7ey0bpy9an07w3w37piq4u" },
+      { "id": "cmn7ey0bry9ax07w311r0rhwn" },
+      { "id": "cmn7ey2ogy9g607w31mvqeimf" },
+      { "id": "cmn7ey2ojy9gg07w3i87xcvlo" }
+    ]
+  },
+  "relatedProducts": {
+    "set": [
+      { "id": "cmn7ewh2vy3ih07w36gp2fy54" },
+      { "id": "cmn7exnx1y07w06wai1bej5by" },
+      { "id": "cmn7exnx4y08306wa8m7xgs4h" },
+      { "id": "cmn7exnx6y08a06wanzh39nbl" }
+    ]
+  },
+  "sections": {
+    "create": [
+      {
+        "HeroBlock": {
+          "data": {
+            "eyebrow": "Platform & technology",
+            "headline": "Unit4 Platform & Technology",
+            "subheadline": "Extensibility, automation, and integrations that keep your estate connected and ready for AI.",
+            "primaryCta": {
+              "create": {
+                "label": "AI innovation",
+                "url": "https://www.unit4.com/products/platform-technology/ai-innovation",
+                "variant": "PRIMARY"
+              }
+            },
+            "secondaryCta": {
+              "create": {
+                "label": "Connected ERP",
+                "url": "https://www.unit4.com/products/platform-technology/video-connected-automated-erp",
+                "variant": "SECONDARY"
+              }
+            }
+          }
+        }
+      },
+      {
+        "RichTextBlock": {
+          "data": {
+            "body": {
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "The Unit4 Platform is how Unit4 delivers continuous innovation: cloud services on Microsoft Azure, APIs and integration patterns for your ecosystem, automation to remove repetitive work, and an AI roadmap—including capabilities like the Advanced Virtual Agent (Ava)—so your teams can focus on outcomes rather than infrastructure."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "FeatureGridBlock": {
+          "data": {
+            "intro": {
+              "create": {
+                "eyebrow": "Why it matters",
+                "title": "Built for change",
+                "subtitle": "Themes from unit4.com platform and integration content."
+              }
+            },
+            "features": {
+              "create": [
+                {
+                  "title": "Integrate your cloud apps",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Connect the platform with managed data flows and an expanding portfolio of cloud integrations so you can adapt as your industry and architecture evolve."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Automation & AI",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Simplify tasks, automate workflows, and surface actionable insights—freeing people to focus on strategic work while governance keeps adoption safe."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Enterprise-grade cloud",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Benefit from security, compliance, and resilience expectations of global services organizations—with a path to migrate from on-premises when you are ready."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "CallToActionBanner": {
+          "data": {
+            "layout": "CENTERED",
+            "title": "Explore AI at Unit4",
+            "body": {
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "See how Unit4 applies responsible AI across products and operations—from governance to product features that assist users in context."
+                    }
+                  ]
+                }
+              ]
+            },
+            "cta": {
+              "create": {
+                "label": "AI at Unit4",
+                "url": "https://www.unit4.com/why-choose-unit4/ai-unit4",
+                "variant": "PRIMARY"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

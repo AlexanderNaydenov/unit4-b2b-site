@@ -1,0 +1,164 @@
+{
+  "summary": "Discover Unit4's ERP software – a flexible, cloud-based ERP solution designed to unify your Finance, HR, and Project teams through a single source of truth. Modular enterprise resource planning that adapts as your organization evolves.",
+  "industries": {
+    "set": [
+      { "id": "cmn7ey0bpy9an07w3w37piq4u" },
+      { "id": "cmn7ey0bry9ax07w311r0rhwn" },
+      { "id": "cmn7ey2ogy9g607w31mvqeimf" },
+      { "id": "cmn7ey2ojy9gg07w3i87xcvlo" }
+    ]
+  },
+  "relatedProducts": {
+    "set": [
+      { "id": "cmn7exnx1y07w06wai1bej5by" },
+      { "id": "cmn7exnx4y08306wa8m7xgs4h" },
+      { "id": "cmn7exnx6y08a06wanzh39nbl" },
+      { "id": "cmn7exqlqy0oz06wac33j3hp6" }
+    ]
+  },
+  "sections": {
+    "create": [
+      {
+        "HeroBlock": {
+          "data": {
+            "eyebrow": "Cloud ERP",
+            "headline": "Adaptable Cloud Enterprise Resource Planning",
+            "subheadline": "Adapt swiftly. Innovate smoothly. Gain deeper insights.",
+            "primaryCta": {
+              "create": {
+                "label": "See a demo",
+                "url": "https://www.unit4.com/contact-us",
+                "variant": "PRIMARY"
+              }
+            },
+            "secondaryCta": {
+              "create": {
+                "label": "Contact sales",
+                "url": "https://www.unit4.com/contact-us",
+                "variant": "SECONDARY"
+              }
+            }
+          }
+        }
+      },
+      {
+        "RichTextBlock": {
+          "data": {
+            "body": {
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Discover Unit4's ERP software – a flexible, cloud-based ERP solution designed to unify your Finance, HR, and Project teams through a single source of truth. Our modular enterprise resource planning system empowers your people and adapts as your organization evolves, giving you the agility to respond to change while maintaining financial control and operational visibility."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "FeatureGridBlock": {
+          "data": {
+            "intro": {
+              "create": {
+                "eyebrow": "Why Unit4 ERP",
+                "title": "Elevate your business with agile ERP",
+                "subtitle": "Content aligned with unit4.com/solutions/erp."
+              }
+            },
+            "features": {
+              "create": [
+                {
+                  "title": "Extensible cloud platform",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Adapt and innovate faster with cloud-native ERP. Make life easier with consistent data across finance, HR, and projects. Remain secure with scalable technology you can trust."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "AI-powered next-gen ERP",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Accelerate strategic growth and operational excellence. Boost performance, speed up tasks, and enhance data accuracy. Amplify the impact of your team's efforts."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Optimize financial management",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Take control of your full record-to-report cycle in one integrated system. Consolidate data for a comprehensive overview at any time—from anywhere."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "QuoteBlock": {
+          "data": {
+            "quote": "Unit4 Enterprise Resource Planning (ERP) Cloud was the perfect fit for the two Councils' shared services model. It eliminates the cost, complexity and maintenance associated with an on-premises platform.",
+            "authorName": "Ben Watson",
+            "authorTitle": "Exchequer and Procurement Manager, South Oxfordshire and Vale of White Horse District Councils"
+          }
+        }
+      },
+      {
+        "StatsBlock": {
+          "data": {
+            "intro": {
+              "create": {
+                "eyebrow": "Recognition",
+                "title": "What analysts say about Unit4 ERP",
+                "subtitle": "Highlights from industry research (see unit4.com for full reports)."
+              }
+            },
+            "stats": {
+              "create": [
+                {
+                  "value": "Top 5",
+                  "label": "ERP solutions — SoftwareReviews Data Quadrant 2024"
+                },
+                {
+                  "value": "$1.73",
+                  "label": "Return per dollar spent — Nucleus Research"
+                },
+                {
+                  "value": "#1",
+                  "label": "User Adoption on G2"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

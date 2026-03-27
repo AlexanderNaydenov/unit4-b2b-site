@@ -1,0 +1,125 @@
+{
+  "summary": "Enterprise financial management for accounting, procurement, billing, and asset management—with the accuracy, compliance, and visibility finance teams need at scale. Aligns with Unit4 Financials / Coda positioning on unit4.com.",
+  "industries": {
+    "set": [
+      { "id": "cmn7ey0bpy9an07w3w37piq4u" },
+      { "id": "cmn7ey0bry9ax07w311r0rhwn" },
+      { "id": "cmn7ey2ogy9g607w31mvqeimf" },
+      { "id": "cmn7ey2ojy9gg07w3i87xcvlo" }
+    ]
+  },
+  "relatedProducts": {
+    "set": [
+      { "id": "cmn7ewh2vy3ih07w36gp2fy54" },
+      { "id": "cmn7exnx1y07w06wai1bej5by" },
+      { "id": "cmn7exqlqy0oz06wac33j3hp6" }
+    ]
+  },
+  "sections": {
+    "create": [
+      {
+        "HeroBlock": {
+          "data": {
+            "eyebrow": "Financial management",
+            "headline": "Unit4 Financials — enterprise financial management",
+            "subheadline": "Record-to-report, procurement, billing, and assets with control and compliance.",
+            "primaryCta": {
+              "create": {
+                "label": "Contact us",
+                "url": "https://www.unit4.com/contact-us",
+                "variant": "PRIMARY"
+              }
+            },
+            "secondaryCta": {
+              "create": {
+                "label": "ERP accounting software",
+                "url": "https://www.unit4.com/products/erp-accounting-software",
+                "variant": "SECONDARY"
+              }
+            }
+          }
+        }
+      },
+      {
+        "RichTextBlock": {
+          "data": {
+            "body": {
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Unit4 Financials by Coda helps organizations run a full financial management stack—general ledger, payables and receivables, procurement, billing, fixed assets, and more—with workflows that match how people-centric services organizations operate. Pair it with Unit4 ERP and FP&A for an end-to-end view from operations to consolidated reporting."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "FeatureGridBlock": {
+          "data": {
+            "intro": {
+              "create": {
+                "eyebrow": "Outcomes",
+                "title": "Financial control built for complex organizations",
+                "subtitle": "Themes consistent with Unit4 ERP financial management content."
+              }
+            },
+            "features": {
+              "create": [
+                {
+                  "title": "Integrated record-to-report",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Consolidate financial data for a comprehensive view—adjust quickly to internal or external change while empowering teams to focus on strategic work."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Procurement and cost control",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Standardize purchasing, improve supplier relationships, and reduce maverick spending with processes that connect finance and operations."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Ready for FP&A",
+                  "description": {
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "text": "Tight integration with Unit4 FP&A supports forecasting, consolidation, and scenario planning from the same trusted data model."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
